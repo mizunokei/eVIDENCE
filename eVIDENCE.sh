@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PATH=$0
-SRC=${PATH%/*}
+path=$0
+SRC=${path%/*}
 
 FASTQ1=$1
 FASTQ2=$2
