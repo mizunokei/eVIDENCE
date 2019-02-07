@@ -1,0 +1,22 @@
+#####################################################
+REF="path to reference.fasta file"
+BWA="path to BWA"
+SAMtools="path to SAMtools"
+Connor="path to Connor"
+BED="path to bed file defining the captured regions"
+#####################################################
+
+
+###### params (Please make changes if needed.) ######
+VAF_SNV=0.001
+NUM_SNV=3
+Q_score=20
+VAF_INDEL=0.001
+NUM_INDEL=3
+MIN_DEPTH=100
+
+CONSENSUS_FREQ_THRESHOLD=0.6
+MIN_FAMILY_SIZE_THRESHOLD=3
+UMT_DISTANCE_THRESHOLD=1
+#####################################################
+
