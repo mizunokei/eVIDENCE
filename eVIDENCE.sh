@@ -44,7 +44,7 @@ $SAMtools mpileup -s -f $REF $OUT/$FILE_NAME.connor.bam > $OUT/$FILE_NAME.connor
 
 perl $SRC/bin/SNP_frqQ_caller.pl -Infile $OUT/$FILE_NAME.connor.pile -INDEL /dev/null -SNV /dev/stdout -cut_off_frq $VAF_SNV -cut_off_num $NUM_SNV -cut_off_Q $Q_score -indel_allele_num_cutoff 1 -indel_allele_frq_cutoff 0.5 > $OUT/$FILE_NAME.connor.pile.snv
 
-perl $SRC/bin/SNP_frqQ_caller.pl -Infile $OUT/$FILE_NAME.connor.pile -INDEL /dev/stdout -SNV /dev/null -cut_off_frq 0.005 -cut_off_num 5 -cut_off_Q $Q_score -indel_allele_num_cutoff $NUM_INDEL -indel_allele_frq_cutoff VAF_INDEL > $OUT/$FILE_NAME.connor.pile.indel
+perl $SRC/bin/SNP_frqQ_caller.pl -Infile $OUT/$FILE_NAME.connor.pile -INDEL /dev/stdout -SNV /dev/null -cut_off_frq 0.005 -cut_off_num 5 -cut_off_Q $Q_score -indel_allele_num_cutoff $NUM_INDEL -indel_allele_frq_cutoff $VAF_INDEL > $OUT/$FILE_NAME.connor.pile.indel
 
 python $SRC/bin/target.py $BED $OUT/$FILE_NAME.connor.pile.snv > $OUT/$FILE_NAME.connor.pile.target.snv
 
