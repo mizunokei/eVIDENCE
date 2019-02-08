@@ -30,7 +30,7 @@ chr1    16174529        16174663
 ## Output file format
 **eVIDENCE.snv.vcf/ eVIDENCE.indel.vcf**
 
-\<chr\> \<start\> \<end\> \<reference\> \<variant\> \<total number of reads\> \<number of variant reads\> \<variant allele frequency\>
+\<chr\> \<start\> \<end\> \<reference\> \<variant\> \<total number of reads\> \<number of variant reads\> \<variant allele frequency (%)\>
 
 1       16256435        16256435        G       A       1221    3       0.2457002457002457
 
