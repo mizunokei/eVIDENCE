@@ -1,7 +1,12 @@
 #!/bin/bash
 
 path=$0
-SRC=${path%/*}
+
+if [ "$path" == "${path%/*}" ]; then
+	SRC=.
+else
+	SRC=${path%/*}
+fi
 
 FASTQ1=$1
 FASTQ2=$2
@@ -49,8 +54,9 @@ python $SRC/bin/change_snv.py $OUT/$FILE_NAME.connor.pile.target.snv > $OUT/$FIL
 
 python $SRC/bin/change_indel.py $OUT/$FILE_NAME.connor.pile.target.indel > $OUT/$FILE_NAME.connor.pile.target.rev.indel
 
+rm $OUT/$FILE_NAME.connor.pile.snv
 rm $OUT/$FILE_NAME.connor.pile.target.snv
-
+rm $OUT/$FILE_NAME.connor.pile.indel
 rm $OUT/$FILE_NAME.connor.pile.target.indel
 
 python $SRC/bin/make_new_sam_1.py $OUT/$FILE_NAME.sam > $OUT/$FILE_NAME.rev_for_fastq.ver2_1.txt
@@ -110,6 +116,16 @@ rm $OUT/$FILE_NAME.final_snv_candidate.strand_bias.txt
 
 python $SRC/bin/final_call.py $OUT/$FILE_NAME.exclude_candidate.snv.txt $OUT/$FILE_NAME.final_snv_candidate.strand_bias.p_value.txt $OUT/$FILE_NAME.final_snv_candidate.over_threshold.txt|python $SRC/bin/vcf.py /dev/stdin > $OUT/$FILE_NAME.eVIDENCE.snv.vcf
 
+rm $OUT/$FILE_NAME.exclude_candidate.snv.txt
+rm $OUT/$FILE_NAME.final_snv_candidate.strand_bias.p_value.txt
+rm $OUT/$FILE_NAME.final_snv_candidate.over_threshold.txt
+rm $OUT/$FILE_NAME.merge_snv_candidate.var.filter.txt
+rm $OUT/$FILE_NAME.merge_snv_candidate.var.txt
+rm $OUT/$FILE_NAME.merge_snv_candidate.all.sort.txt
+rm $OUT/$FILE_NAME.new.barcode.sort.*
+rm $OUT/$FILE_NAME.connor.pile.target.rev.snv
+rm $OUT/$FILE_NAME.connor.pile
+
 for variant in `cat $OUT/$FILE_NAME.connor.pile.target.rev.indel|perl -ne '@l=split("\t"); $varinat="$l[0]"."_"."$l[1]"."_"."$l[2]"."_"."$l[3]"; print"$varinat "' `
 do
 python $SRC/bin/pos_info.indel.py $OUT/$FILE_NAME.new.barcode.sort. $variant >> $OUT/$FILE_NAME.merge_indel_candidate.all.txt
@@ -130,4 +146,12 @@ python $SRC/bin/filter_fam_num.py $OUT/$FILE_NAME.final_indel_candidate.pos.txt 
 python $SRC/bin/check_barcode.py $OUT/$FILE_NAME.final_indel_candidate.over_threshold.txt $OUT/$FILE_NAME.merge_indel_candidate.var.filter.txt > $OUT/$FILE_NAME.exclude_candidate.indel.txt
 
 python $SRC/bin/final_call.py $OUT/$FILE_NAME.exclude_candidate.indel.txt $OUT/$FILE_NAME.final_indel_candidate.over_threshold.txt|python $SRC/bin/vcf.py /dev/stdin > $OUT/$FILE_NAME.eVIDENCE.indel.vcf
+
+rm $OUT/$FILE_NAME.exclude_candidate.indel.txt
+rm $OUT/$FILE_NAME.final_indel_candidate.over_threshold.txt
+rm $OUT/$FILE_NAME.merge_indel_candidate.var.filter.txt
+rm $OUT/$FILE_NAME.merge_indel_candidate.var.txt
+rm $OUT/$FILE_NAME.merge_indel_candidate.all.sort.txt
+rm $OUT/$FILE_NAME.new.barcode.sort.*
+rm $OUT/$FILE_NAME.connor.pile.target.rev.indel
 
