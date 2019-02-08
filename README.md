@@ -41,7 +41,7 @@ chr1    16174529        16174663
 If you want to change parameters, please change this file (see below)).
 
 ```
-sh eVIDENCE.sh <Full path> FASTQ1 <Fastq1> FASTQ2 <Fastq2> OUT <Output directory name> SAMPLE_NAME <Sample name>
+sh eVIDENCE.sh FASTQ1 <Path to fastq1> FASTQ2 <Path to fastq2> OUT <Output directory name> SAMPLE_NAME <Sample name>
 ```
 
 ## Parameter setting in configuration file
