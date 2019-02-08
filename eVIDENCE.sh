@@ -38,7 +38,7 @@ $SAMtools sort $OUT/$FILE_NAME.bam $OUT/$FILE_NAME.sort
 
 $SAMtools index $OUT/$FILE_NAME.sort.bam
 
-$Connor -f $CONSENSUS_FREQ_THRESHOLD -s $MIN_FAMILY_SIZE_THRESHOLD -d UMT_DISTANCE_THRESHOLD $OUT/$FILE_NAME.sort.bam $OUT/$FILE_NAME.connor.bam
+$Connor -f $CONSENSUS_FREQ_THRESHOLD -s $MIN_FAMILY_SIZE_THRESHOLD -d $UMT_DISTANCE_THRESHOLD $OUT/$FILE_NAME.sort.bam $OUT/$FILE_NAME.connor.bam
 
 $SAMtools mpileup -s -f $REF $OUT/$FILE_NAME.connor.bam > $OUT/$FILE_NAME.connor.pile
 
