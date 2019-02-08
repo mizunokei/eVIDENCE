@@ -108,7 +108,7 @@ python $SRC/bin/strand_bias_calc_2.py $OUT/$FILE_NAME.final_snv_candidate.strand
 
 rm $OUT/$FILE_NAME.final_snv_candidate.strand_bias.txt
 
-python $SRC/bin/final_call.py $OUT/$FILE_NAME.exclude_candidate.snv.txt $OUT/$FILE_NAME.final_snv_candidate.strand_bias.p_value.txt $OUT/$FILE_NAME.final_snv_candidate.over_threshold.txt > $OUT/$FILE_NAME.eVIDENCE.snv.txt
+python $SRC/bin/final_call.py $OUT/$FILE_NAME.exclude_candidate.snv.txt $OUT/$FILE_NAME.final_snv_candidate.strand_bias.p_value.txt $OUT/$FILE_NAME.final_snv_candidate.over_threshold.txt|python $SRC/bin/vcf.py /dev/stdin > $OUT/$FILE_NAME.eVIDENCE.snv.vcf
 
 for variant in `cat $OUT/$FILE_NAME.connor.pile.target.rev.indel|perl -ne '@l=split("\t"); $varinat="$l[0]"."_"."$l[1]"."_"."$l[2]"."_"."$l[3]"; print"$varinat "' `
 do
@@ -129,5 +129,5 @@ python $SRC/bin/filter_fam_num.py $OUT/$FILE_NAME.final_indel_candidate.pos.txt 
 
 python $SRC/bin/check_barcode.py $OUT/$FILE_NAME.final_indel_candidate.over_threshold.txt $OUT/$FILE_NAME.merge_indel_candidate.var.filter.txt > $OUT/$FILE_NAME.exclude_candidate.indel.txt
 
-python $SRC/bin/final_call.py $OUT/$FILE_NAME.exclude_candidate.indel.txt $OUT/$FILE_NAME.final_indel_candidate.over_threshold.txt > $OUT/$FILE_NAME.eVIDENCE.indel.txt
+python $SRC/bin/final_call.py $OUT/$FILE_NAME.exclude_candidate.indel.txt $OUT/$FILE_NAME.final_indel_candidate.over_threshold.txt|python $SRC/bin/vcf.py /dev/stdin > $OUT/$FILE_NAME.eVIDENCE.indel.vcf
 
