@@ -69,7 +69,7 @@ MIN_FAMILY_SIZE_THRESHOLD (3)
 
 UMT_DISTANCE_THRESHOLD (1)
 
-## Preformance
+## Performance
 
 
 ## Licence
