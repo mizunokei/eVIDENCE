@@ -122,7 +122,6 @@ rm $OUT/$FILE_NAME.final_snv_candidate.over_threshold.txt
 rm $OUT/$FILE_NAME.merge_snv_candidate.var.filter.txt
 rm $OUT/$FILE_NAME.merge_snv_candidate.var.txt
 rm $OUT/$FILE_NAME.merge_snv_candidate.all.sort.txt
-rm $OUT/$FILE_NAME.new.barcode.sort.*
 rm $OUT/$FILE_NAME.connor.pile.target.rev.snv
 rm $OUT/$FILE_NAME.connor.pile
 
@@ -152,5 +151,6 @@ rm $OUT/$FILE_NAME.final_indel_candidate.over_threshold.txt
 rm $OUT/$FILE_NAME.merge_indel_candidate.var.filter.txt
 rm $OUT/$FILE_NAME.merge_indel_candidate.var.txt
 rm $OUT/$FILE_NAME.merge_indel_candidate.all.sort.txt
+rm $OUT/$FILE_NAME.new.barcode.sort.*
 rm $OUT/$FILE_NAME.connor.pile.target.rev.indel
 
