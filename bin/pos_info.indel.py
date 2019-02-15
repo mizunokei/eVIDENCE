@@ -74,6 +74,7 @@ for line in out_f:
 			for i in range(int(num)):
 				cigar_l_f.append("M")
 				cigar_l_2_f.append("M")
+				pos_l_f.append("M")
 		if cigar_f[tup[1]] == "I":
 			for i in range(int(num)):
 				cigar_l_f.append("I")
