@@ -72,7 +72,7 @@ UMT_DISTANCE_THRESHOLD (1)
 ## Performance
 
 
-## Licence
+## License
 GPL
 
 ## Contact
