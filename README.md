@@ -1,6 +1,6 @@
 # eVIDENCE
 
-A software to indetify rare variants from molecular-barcoded targeted sequencing data
+A software to identify rare variants from molecular-barcoded targeted sequencing data
 
 Overview
 1. Process a bam file using Conner, and detect candidate variants
