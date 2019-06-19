@@ -59,7 +59,9 @@ rm $OUT/$FILE_NAME.connor.pile.target.snv
 rm $OUT/$FILE_NAME.connor.pile.indel
 rm $OUT/$FILE_NAME.connor.pile.target.indel
 
-python $SRC/bin/make_new_sam_1.py $OUT/$FILE_NAME.sam > $OUT/$FILE_NAME.rev_for_fastq.ver2_1.txt
+python $SRC/bin/make_new_sam_0.py $OUT/$FILE_NAME.connor.pile.target.rev.snv $OUT/$FILE_NAME.connor.pile.target.rev.indel $OUT/$FILE_NAME.sam > $OUT/$FILE_NAME.target.sam
+
+python $SRC/bin/make_new_sam_1.py $OUT/$FILE_NAME.target.sam > $OUT/$FILE_NAME.rev_for_fastq.ver2_1.txt
 
 rm $OUT/$FILE_NAME.sam
 
