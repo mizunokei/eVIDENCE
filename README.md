@@ -1,11 +1,15 @@
 # eVIDENCE
 
-A software to identify rare variants from molecular-barcoded targeted sequencing data
+A software to identify low-frequency variants from molecular-barcoded targeted sequencing data using the ThruPLEX tag-seq (Takara Bio) 
 
 Overview
 1. Process a bam file using Conner, and detect candidate variants
 2. Remove barcode and stem sequences from a raw bam file, and generate a new bam file 
 3. Filter candidate variants using a newly-created bam file
+
+If you use this package in your analysis, please cite our manuscript:
+
+Mizuno K. et al. eVIDENCE: a practical variant filtering for low-frequency variants detection in cell-free DNA. Sci Rep. 9, 15017 (2019)
 
 ## Requirement
 bwa (0.7.15 or higher)
@@ -70,7 +74,7 @@ MIN_FAMILY_SIZE_THRESHOLD (3)
 UMT_DISTANCE_THRESHOLD (1)
 
 ## Performance
-
+Performance of this tool is provided in Mizuno et al. (Sci Rep. 9, 15017 (2019))
 
 ## License
 GPL
