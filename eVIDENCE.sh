@@ -100,7 +100,9 @@ sort -k1,1 -k2n,2 -k4,4 -k13,13 $OUT/$FILE_NAME.merge_snv_candidate.all.txt > $O
 
 rm $OUT/$FILE_NAME.merge_snv_candidate.all.txt
 
-python $SRC/bin/get_var.py $OUT/$FILE_NAME.merge_snv_candidate.all.sort.txt > $OUT/$FILE_NAME.merge_snv_candidate.var.txt
+python $SRC/bin/filter_all.py $OUT/$FILE_NAME.merge_snv_candidate.all.sort.txt > $OUT/$FILE_NAME.merge_snv_candidate.all.sort.filter.txt
+
+python $SRC/bin/get_var.py $OUT/$FILE_NAME.merge_snv_candidate.all.sort.filter.txt > $OUT/$FILE_NAME.merge_snv_candidate.var.txt
 
 python $SRC/bin/filter_snv.py $OUT/$FILE_NAME.merge_snv_candidate.var.txt > $OUT/$FILE_NAME.merge_snv_candidate.var.filter.txt
 
@@ -124,6 +126,7 @@ rm $OUT/$FILE_NAME.final_snv_candidate.over_threshold.txt
 rm $OUT/$FILE_NAME.merge_snv_candidate.var.filter.txt
 rm $OUT/$FILE_NAME.merge_snv_candidate.var.txt
 rm $OUT/$FILE_NAME.merge_snv_candidate.all.sort.txt
+rm $OUT/$FILE_NAME.merge_snv_candidate.all.sort.filter.txt
 rm $OUT/$FILE_NAME.connor.pile.target.rev.snv
 rm $OUT/$FILE_NAME.connor.pile
 
@@ -136,7 +139,9 @@ sort -k1,1 -k2n,2 -k4,4 -k13,13 $OUT/$FILE_NAME.merge_indel_candidate.all.txt > 
 
 rm $OUT/$FILE_NAME.merge_indel_candidate.all.txt
 
-python $SRC/bin/get_var.py $OUT/$FILE_NAME.merge_indel_candidate.all.sort.txt > $OUT/$FILE_NAME.merge_indel_candidate.var.txt
+python $SRC/bin/filter_all.py $OUT/$FILE_NAME.merge_indel_candidate.all.sort.txt > $OUT/$FILE_NAME.merge_indel_candidate.all.sort.filter.txt
+
+python $SRC/bin/get_var.py $OUT/$FILE_NAME.merge_indel_candidate.all.sort.filter.txt > $OUT/$FILE_NAME.merge_indel_candidate.var.txt
 
 python $SRC/bin/filter_indel.py $OUT/$FILE_NAME.merge_indel_candidate.var.txt > $OUT/$FILE_NAME.merge_indel_candidate.var.filter.txt
 
@@ -153,6 +158,7 @@ rm $OUT/$FILE_NAME.final_indel_candidate.over_threshold.txt
 rm $OUT/$FILE_NAME.merge_indel_candidate.var.filter.txt
 rm $OUT/$FILE_NAME.merge_indel_candidate.var.txt
 rm $OUT/$FILE_NAME.merge_indel_candidate.all.sort.txt
+rm $OUT/$FILE_NAME.merge_indel_candidate.all.sort.filter.txt
 rm $OUT/$FILE_NAME.new.barcode.sort.*
 rm $OUT/$FILE_NAME.connor.pile.target.rev.indel
 
